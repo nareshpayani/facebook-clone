@@ -1,8 +1,14 @@
 .app{
     background-color: #f1f2f5;
     height: auto;
+    
 }
 
 .app__body{
     display: flex;
+    height: auto;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 10px;
 }

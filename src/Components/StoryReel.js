@@ -35,6 +35,14 @@ function StoryReel() {
             profileSrc="https://avatars.dicebear.com/api/avataaars/${seed}.svg"
             title="LeeLa"
             />
+
+        <Story 
+            image="https://blog.azanic.com/wp-content/uploads/2019/11/abstract-background-3.jpg"
+            profileSrc="https://avatars.dicebear.com/api/avataaars/${seed}.svg"
+            title="LeeLa"
+            />
+
+
         </div>
     )
 }

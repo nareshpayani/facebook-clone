@@ -44,7 +44,7 @@
 .messageSender__options{
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 10px;
     color: gray;
     margin: 15px;
 }
@@ -52,6 +52,7 @@
 .messageSender__options > h4{
     margin-left: 15px;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .messageSender__options:hover{

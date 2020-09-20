@@ -1,9 +1,12 @@
 .feed{
-    flex: 1;
+    flex: 0.6;
     display: flex;
-    padding: 30px 150px;
+    padding: 30px 30px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  
+    overflow-y: scroll;
+    
 }
 
