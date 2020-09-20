@@ -4,7 +4,9 @@ import "../Css/MessageSender.css";
 import VideocamIcon from '@material-ui/icons/Videocam';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
-
+import { useStateValue } from './StateProvider';
+import db from '../firebase';
+import firebase from 'firebase';
 
 function MessageSender() {
 
@@ -13,12 +15,24 @@ function MessageSender() {
     // Image URL
     const [imageUrl, setImageUrl] = useState('')
 
+    // User login datat fetch
+    const[{user}] = useStateValue();
 
 
     const handleSubmit = e => {
         e.preventDefault();
 
         // database mapping
+
+        db.collection('posts').add({
+            message: input,
+            timestamp: firebase.firestore.FieldValue.
+            serverTimestamp(),
+
+            profilePic: user.photoURL,
+            username: user.displayName,
+            image: imageUrl
+        })
 
 
         setInput("");
@@ -30,14 +44,14 @@ function MessageSender() {
 
             {/* Post Card- Top Section */}
             <div className="messageSender__top">
-                <Avatar />
+                <Avatar src={user.photoURL} />
                 <form>
                     <input 
                     value={input}
                     onChange = {e => setInput(e.target.value)}
                     className="messageSender__input" 
                     type="text" 
-                    placeholder= {`What's on your mind Naresh Payani`}
+                    placeholder= {`What's on your mind ${user.displayName}`}
 
                     />
 

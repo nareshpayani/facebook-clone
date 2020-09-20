@@ -11,11 +11,16 @@ import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import ExpandMoreOutlinedIcon from '@material-ui/icons/ExpandMoreOutlined';
 import EventIcon from '@material-ui/icons/Event';
 import AnnouncementIcon from '@material-ui/icons/Announcement';
+import { useStateValue } from './StateProvider'
 
 function Sidebar() {
+
+    const[{user}] = useStateValue();
+
+
     return (
         <div className="sidebar">
-            <SidebarRow src="https://lh3.googleusercontent.com/a-/AOh14Gg8MmTfF4-Dg7YSKQD9kg6ihlbtFlZLQYV_zL50NA" title="Naresh Payani"/>
+            <SidebarRow src={user.photoURL} title={user.displayName}/>
             <SidebarRow Icon={LocalHospitalIcon} title="COVID-19"/>
             <SidebarRow Icon={AnnouncementIcon} title="News Feed"/>
             <SidebarRow Icon={EmojiFlagsIcon} title="Pages"/>

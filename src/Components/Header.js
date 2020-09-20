@@ -12,8 +12,12 @@ import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ForumIcon from '@material-ui/icons/Forum';
 import AddIcon from '@material-ui/icons/Add';
+import { useStateValue } from './StateProvider'
 
 function Header() {
+    // user info fecth
+    const[{user}] = useStateValue();
+
     return (
         <div className="header">
 
@@ -49,8 +53,8 @@ function Header() {
         {/* Header Right Component */}
             <div className="header__right">
                 <div className="header__info">
-                    <Avatar />
-                    <h4>Naresh Payani</h4>
+                    <Avatar src={user.photoURL}/>
+                    <h4>{user.displayName}</h4>
                 </div>
 
                 <IconButton >

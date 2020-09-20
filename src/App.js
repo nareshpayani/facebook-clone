@@ -6,17 +6,21 @@ import Header from './Components/Header';
 import Login from './Components/Login';
 import Sidebar from './Components/Sidebar';
 import Widgets from './Components/Widgets';
+import { useStateValue } from './Components/StateProvider'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
 
   //User 
-  const user = null;
+  const [{ user }, dispatch] = useStateValue();
 
   return (
 
     // We are going to BEM naming convention
 
     <div className="app">
+
+   
         { !user ? ( <Login/>) : (
 
           <>
@@ -30,7 +34,7 @@ function App() {
 
         )}
      
-      
+   
     </div>
   );
 }
